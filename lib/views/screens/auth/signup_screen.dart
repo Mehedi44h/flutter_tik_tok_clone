@@ -34,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 15,
           ),
           Stack(children: [
             CircleAvatar(
