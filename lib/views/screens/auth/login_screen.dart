@@ -5,7 +5,6 @@ import 'package:tik_tok_clone/views/screens/auth/signup_screen.dart';
 import 'package:tik_tok_clone/views/widgets/text_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  
   LoginScreen({Key? key}) : super(key: key);
   final TextEditingController _emailcontroller = TextEditingController();
   final TextEditingController _passwordcontroller = TextEditingController();
@@ -70,7 +69,8 @@ class LoginScreen extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                print('clicked');
+                authController.loginUser(
+                    _emailcontroller.text, _passwordcontroller.text);
               },
               child: Center(
                 child: Text(
