@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tik_tok_clone/constant.dart';
 import 'package:tik_tok_clone/home.dart';
 import 'package:tik_tok_clone/views/screens/auth/login_screen.dart';
+import 'package:tik_tok_clone/views/screens/home_screen.dart';
 import 'package:tik_tok_clone/views/widgets/text_input_field.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -101,8 +102,11 @@ class SignUpScreen extends StatelessWidget {
             ),
             child: InkWell(
               onTap: () {
-                authController.registerUser(_usernamecontroller.text,
-                    _emailcontroller.text, _passwordcontroller.text, authController.profilePhoto);
+                authController.registerUser(
+                    _usernamecontroller.text,
+                    _emailcontroller.text,
+                    _passwordcontroller.text,
+                    authController.profilePhoto);
               },
               child: Center(
                 child: Text(
@@ -125,11 +129,18 @@ class SignUpScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginScreen()),
                       (route) => false);
                 },
-                child: Text(
-                  " Login",
-                  style: TextStyle(
-                    color: buttonColor,
-                    fontSize: 20,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        (route) => false);
+                  },
+                  child: Text(
+                    " Login",
+                    style: TextStyle(
+                      color: buttonColor,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               )
