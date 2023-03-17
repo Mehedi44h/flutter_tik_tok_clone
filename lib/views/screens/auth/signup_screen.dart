@@ -132,7 +132,7 @@ class SignUpScreen extends StatelessWidget {
                 child: InkWell(
                   onTap: () {
                     Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(builder: (context) => HomeScreen(),),
                         (route) => false);
                   },
                   child: Text(

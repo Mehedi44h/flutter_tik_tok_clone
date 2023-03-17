@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 30,
                 ),
                 label: 'Search'),
-            BottomNavigationBarItem(icon: CustomIcon(), label: ''),
+            BottomNavigationBarItem(icon: CustomIcon(), label: 'Video'),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.message,
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: 'Profile'),
           ]),
       body: Center(
-        child: Text('Home screen'),
+        child: pages[pageindex],
       ),
     );
   }
