@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tik_tok_clone/constant.dart';
@@ -15,9 +17,13 @@ class _AddVideoScreenState extends State<AddVideoScreen> {
     final video = await ImagePicker().pickVideo(source: src);
     if (video != null) {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ConfirmScreen()));
+          .push(MaterialPageRoute(builder: (context) => ConfirmScreen(
+            videoFile: File(video.path),
+            videoPath: video.path,),
+            ),
+            );
     }
-  }
+  } 
 
   showOptionsDialog(BuildContext context) {
     return showDialog(
