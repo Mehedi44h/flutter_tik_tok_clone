@@ -6,6 +6,7 @@ import 'package:tik_tok_clone/home.dart';
 import 'package:get/get.dart';
 import 'package:tik_tok_clone/views/screens/auth/login_screen.dart';
 import 'package:tik_tok_clone/views/screens/auth/signup_screen.dart';
+import 'package:tik_tok_clone/views/screens/video_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: SignUpScreen(),
+      home: VideoScreen(),
     );
   }
 }

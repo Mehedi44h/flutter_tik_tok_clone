@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -10,11 +10,16 @@ import 'package:tik_tok_clone/models/video.dart';
 import 'package:video_compress/video_compress.dart';
 
 class UploadVideoController extends GetxController {
+
+  // compress video and upload to firebase storage
   _compressVideo(String videoPath) async {
     final compressedVideo = await VideoCompress.compressVideo(videoPath,
         quality: VideoQuality.MediumQuality);
     return compressedVideo!.file;
   }
+
+  // upload video to firebase storage
+  
 
   Future<String> _uploadVideoToStorage(String id, String videoPath) async {
     Reference ref = firebaseStorage.ref().child('videos').child(id);
@@ -29,6 +34,7 @@ class UploadVideoController extends GetxController {
     return thumbnil;
   }
 
+  // upload thumbnil image to firebase storage
   Future<String> _upLoadImageToStorage(String id, String videoPath) async {
     Reference ref = firebaseStorage.ref().child('thumbnils').child(id);
     UploadTask uploadTask = ref.putFile(await _getThumbnil(videoPath));
